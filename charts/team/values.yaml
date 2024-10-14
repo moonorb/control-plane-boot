@@ -1,3 +1,9 @@
+group: ""
+cluster: ""
+namespaces: []
+githubOrg: ""
+repos: []
+
 #group: ""
 #cluster: ""
 #namespaces: []
@@ -5,10 +11,3 @@
 #githubOrg: ""
 #deployDir: env
 #repos: []
-
-
-group: ""
-cluster: ""
-namespaces: []
-githubOrg: ""
-repos: []
