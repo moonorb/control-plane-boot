@@ -8,8 +8,8 @@ spec:
     helm:
       releaseName: '{{ .Release.Name }}'
       valueFiles:
-      - '../../bootstrap/teams/{{ .Release.Name }}/values.yaml'
-    repoURL: 'https://github.qualcomm.com/Nimbus/control-plane-boot' # Changed this.
+      - '../../teams/{{ .Release.Name }}/values.yaml'
+    repoURL: 'https://github.com/moonorb/control-plane'
     path: charts/namespaces
     targetRevision: HEAD
   destination:
@@ -17,3 +17,23 @@ spec:
     name: {{ .Values.cluster }}
   syncPolicy:
     automated: {}
+
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: '{{ .Release.Name }}-namespaces'
+#spec:
+#  project: default
+#  source:
+#    helm:
+#      releaseName: '{{ .Release.Name }}'
+#      valueFiles:
+#      - '../../bootstrap/teams/{{ .Release.Name }}/values.yaml'
+#    repoURL: 'https://github.qualcomm.com/Nimbus/control-plane-boot' # Changed this.
+#    path: charts/namespaces
+#    targetRevision: HEAD
+#  destination:
+#    namespace: '*'
+#    name: {{ .Values.cluster }}
+#  syncPolicy:
+#    automated: {}
