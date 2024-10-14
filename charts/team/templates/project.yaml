@@ -4,7 +4,7 @@ metadata:
   name: '{{ .Release.Name }}'
 spec:
   sourceRepos:
-    - '{{ $.Values.githubUrl }}/{{ .Values.githubOrg | default .Release.Name }}/*'
+    - 'https://github.com/{{ .Values.githubOrg | default .Release.Name }}/*'
   destinations:
     - namespace: '{{ .Release.Name }}-*'
       name: {{ .Values.cluster }}
@@ -14,4 +14,3 @@ spec:
     - p, proj:{{ .Release.Name }}:admin, *, *, {{ .Release.Name }}/*, allow
     groups:
     - '{{ .Values.group }}'
-
